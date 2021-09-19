@@ -33,7 +33,8 @@ class Profile(models.Model):
     class Meta:
         verbose_name = 'Profile'
         verbose_name_plural = 'Profiles'
-
+        
+        
 class Projects(models.Model):
     project_title = models.CharField(max_length=255)
     project_image = models.ImageField(upload_to = 'images/', default='images/default.jpg')
