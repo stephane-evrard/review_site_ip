@@ -1,0 +1,3 @@
+Hello {{name}}
+
+Welcome to Awwards. You will find the most exciting pictures from around the world on Awwards.
