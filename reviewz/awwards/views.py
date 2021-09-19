@@ -34,7 +34,8 @@ def register(request):
     else:
         form = RegisterForm()
     return render(request, 'registration/registration_form.html', {'form':form})
-
+    
+    
 @login_required(login_url='/accounts/login/')
 def search_projects(request):
     if 'keyword' in request.GET and request.GET["keyword"]:
@@ -48,8 +49,9 @@ def search_projects(request):
         message = "You haven't searched for any term"
         return render(request, 'search.html', {"message": message})
 
+
 def get_project(request, id):
-    
+
     try:
         project = Projects.objects.get(pk = id)
         
@@ -58,6 +60,7 @@ def get_project(request, id):
     
     
     return render(request, "projects.html", {"project":project})
+  
 
 @login_required(login_url='/accounts/login/')
 def new_project(request):
@@ -73,6 +76,7 @@ def new_project(request):
     else:
         form = NewProjectForm()
     return render(request, 'new-project.html', {"form": form})
+
 
 @login_required(login_url='/accounts/login/')
 def user_profiles(request):
@@ -91,6 +95,7 @@ def user_profiles(request):
         form = ProfileUpdateForm()
     
     return render(request, 'registration/profile.html', {"form":form, "projects":projects})
+
 
 class ProjectList(APIView):
     def get(self, request, format=None):
