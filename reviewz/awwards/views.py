@@ -20,3 +20,18 @@ def index(request):
     
 
     return render(request, 'index.html', {"date": date, "projects":projects})
+
+
+def register(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Account created for {username}')
+            return redirect('/')
+        
+    else:
+        form = RegisterForm()
+    return render(request, 'registration/registration_form.html', {'form':form})
+    
