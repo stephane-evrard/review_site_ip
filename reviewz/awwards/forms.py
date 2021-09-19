@@ -13,6 +13,7 @@ class NewProjectForm(forms.ModelForm):
         widgets = {
           'project_description': forms.Textarea(attrs={'rows':4, 'cols':10,}),
         }
+        
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
@@ -21,7 +22,8 @@ class ProfileUpdateForm(forms.ModelForm):
         widgets = {
           'bio': forms.Textarea(attrs={'rows':2, 'cols':10,}),
         }
-
+        
+        
 class RegisterForm(RegistrationForm):
     first_name = forms.CharField(max_length=255)
     last_name = forms.CharField(max_length=255)
@@ -36,4 +38,4 @@ class RegisterForm(RegistrationForm):
         for fieldname in ['username', 'password1', 'password2']:
             self.fields[fieldname].help_text = None
         self.helper.form_show_labels = True 
-               
+        
