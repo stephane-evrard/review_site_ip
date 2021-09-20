@@ -71,6 +71,9 @@ This application comes with two API Endpoints for Profiles and Projects.
 
 - Projects API Endpoint - https://siteawward.herokuapp.com/api/projects/
 
+## Live Link on Heroku
+    https://glacial-bastion-74668.herokuapp.com/
+
 
 # AUTHOR
 
